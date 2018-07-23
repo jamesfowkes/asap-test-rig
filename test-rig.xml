@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<board type="Arduino Uno" name="ASAP Watercraft Test Rig">
+	<info>
+		Arduino sketch for the ASAP Watercraft user PCB test rig
+	</info>
+	
+	<devices>
+		<device name="LCD" type="Sparkfun Serial LCD">
+			<setting id="pin" name="TX" value="2"/>
+			<setting id="width" value="20"/>
+			<setting id="lines" value="4"/>
+		</device>
+	</devices>
+	<custom_code>
+		<file>test-sequence.cpp</file>
+		<file>test-steps.cpp</file>
+		<file>test-steps.h</file>
+		<file>test-runner.cpp</file>
+		<file>test-runner.h</file>
+	</custom_code>
+	<adl protocol="simple"></adl>
+</board>
