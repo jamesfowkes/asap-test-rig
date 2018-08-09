@@ -1,23 +1,68 @@
 <?xml version="1.0"?>
 
 <board type="Arduino Uno" name="ASAP Watercraft Test Rig">
-	<info>
-		Arduino sketch for the ASAP Watercraft user PCB test rig
-	</info>
-	
-	<devices>
-		<device name="LCD" type="Sparkfun Serial LCD">
-			<setting id="pin" name="TX" value="2"/>
-			<setting id="width" value="20"/>
-			<setting id="lines" value="4"/>
-		</device>
-	</devices>
-	<custom_code>
-		<file>test-sequence.cpp</file>
-		<file>test-steps.cpp</file>
-		<file>test-steps.h</file>
-		<file>test-runner.cpp</file>
-		<file>test-runner.h</file>
-	</custom_code>
-	<adl protocol="simple"></adl>
+    <info>
+        Arduino sketch for the ASAP Watercraft user PCB test rig
+    </info>
+    
+    <devices>
+
+        <device name="Start Button" type="Digital Input">
+            <setting id="pin" name="start" value="12"/>
+        </device>
+
+        <device name="DIN Flood_Sense" type="Digital Input">
+            <setting id="pin" name="sense" value="11"/>
+        </device>
+
+        <device name="LCD" type="Sparkfun Serial LCD">
+            <setting id="pin" name="TX" value="10"/>
+            <setting id="width" value="20"/>
+            <setting id="lines" value="4"/>
+        </device>
+
+        <device name="Molex Left Throttle" type="Digital Output">
+            <setting id="pin" name="throttle" value="9"/>
+        </device>
+
+        <device name="Molex Right Throttle" type="Digital Output">
+            <setting id="pin" name="throttle" value="8"/>
+        </device>
+
+        <device name="Molex Flood_Sense" type="Digital Output">
+            <setting id="pin" name="sense" value="7"/>
+        </device>
+        
+        <device name="Speed Signal" type="Digital Output">
+            <setting id="pin" name="speed" value="6"/>
+        </device>
+
+        <device name="DIN Left Throttle" type="Digital Input">
+            <setting id="pin" name="throttle" value="5"/>
+        </device>
+
+        <device name="DIN Right Throttle" type="Digital Input">
+            <setting id="pin" name="throttle" value="4"/>
+        </device>
+
+        <device name="Voltage Control DAC" type="Adafruit MCP4725">
+            <setting id="default" value="4095"/>
+            <setting id="min" value="2500"/>
+        </device>
+
+        <device name="High Voltage ADC" type="Adafruit ADS1x15">
+            <setting id="ads_type" value="ADS1115"/>
+            <setting id="multiplier" value="20.0f"/>
+        </device>
+
+    </devices>
+
+    <custom_code>
+        <file>test-sequence.cpp</file>
+        <file>test-steps.cpp</file>
+        <file>test-steps.h</file>
+        <file>test-runner.cpp</file>
+        <file>test-runner.h</file>
+    </custom_code>
+    <adl protocol="simple"></adl>
 </board>
