@@ -7,8 +7,10 @@
     
     <devices>
 
-        <device name="Start Button" type="Digital Input">
+        <device name="Start Button" type="Debounced Input">
             <setting id="pin" name="start" value="12"/>
+            <setting id="debounce_time" value="50"/>
+            <setting id="pullup" value="true"/>
         </device>
 
         <device name="DIN Flood_Sense" type="Digital Input">
@@ -55,14 +57,29 @@
             <setting id="multiplier" value="20.0f"/>
         </device>
 
+        <device name="High Voltage Supply Relay" type="Digital Output">
+            <setting id="pin" name="relay" value="2"/>
+        </device>
+
+        <device name="Charge Relay" type="Digital Output">
+            <setting id="pin" name="relay" value="3"/>
+        </device>
+
+        <device name="Battery Supply Relay" type="Digital Output">
+            <setting id="pin" name="relay" value="A0"/>
+        </device>
+
     </devices>
 
     <custom_code>
         <file>test-sequence.cpp</file>
+        <file>action-steps.cpp</file>
         <file>test-steps.cpp</file>
         <file>test-steps.h</file>
         <file>test-runner.cpp</file>
         <file>test-runner.h</file>
+        <file>log.cpp</file>
+        <file>log.h</file>
     </custom_code>
     <adl protocol="simple"></adl>
 </board>
