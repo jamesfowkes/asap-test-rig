@@ -7,13 +7,13 @@
     
     <devices>
 
-        <device name="Start Button" type="Debounced Input">
+        <device name="OK Button" type="Debounced Input">
             <setting id="pin" name="start" value="12"/>
             <setting id="debounce_time" value="50"/>
             <setting id="pullup" value="true"/>
         </device>
 
-        <device name="DIN Flood_Sense" type="Digital Input">
+        <device name="DIN Flood_Sense" type="Digital Output">
             <setting id="pin" name="sense" value="11"/>
         </device>
 
@@ -49,7 +49,7 @@
 
         <device name="Voltage Control DAC" type="Adafruit MCP4725">
             <setting id="default" value="4095"/>
-            <setting id="min" value="2500"/>
+            <setting id="min" value="2048"/>
         </device>
 
         <device name="High Voltage ADC" type="Adafruit ADS1x15">
@@ -78,8 +78,16 @@
         <file>test-steps.h</file>
         <file>test-runner.cpp</file>
         <file>test-runner.h</file>
+        <file>test-devices.h</file>
+        <file>speed-output.cpp</file>
+        <file>speed-output.h</file>
+        <file>lcd.cpp</file>
+        <file>lcd.h</file>
+        <file>util.cpp</file>
+        <file>util.h</file>
         <file>log.cpp</file>
         <file>log.h</file>
     </custom_code>
     <adl protocol="simple"></adl>
 </board>
+
